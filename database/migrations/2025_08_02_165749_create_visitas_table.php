@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('time_start'); // Start time as string (H:i format)
             $table->string('time_end');   // End time as string (H:i format)
             $table->json('dates');        // Selected dates (one or more)
-            $table->enum('type', ['interna', 'externa']);
+            $table->enum('type', ['interna', 'externa'])->default('interna');
             $table->foreignId('sede_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');                           // Requester user
             $table->foreignId('authorized_by')->nullable()->constrained('users')->onDelete('set null'); // Authorizer user

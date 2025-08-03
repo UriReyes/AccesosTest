@@ -73,6 +73,7 @@ class VisitaController extends Controller
             'user_id'       => Auth::id(),
             'authorized_by' => null,
             'status'        => 'pending',
+            'type'          => 'interna',
         ]);
 
         if (! empty($data['activo_ids'])) {
